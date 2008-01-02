@@ -14,6 +14,7 @@ Source:		%name-%version.tar.bz2
 License:	GPL
 Group:		Graphical desktop/KDE
 Url:		http://thaiopensource.org/development/libpqxx
+BuildRoot:	%{_tmppath}/%{name}-buildroot
 BuildRequires:	postgresql-devel
 BuildRequires:  xmlto
 BuildRequires:  doxygen

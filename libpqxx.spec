@@ -9,7 +9,7 @@
 Summary:	Libpqxx is the official C++ client API for PostgreSQL
 Name:		%{name}
 Version:	%{version}
-Release:	%mkrel 4
+Release:	%mkrel 5
 Source:		%name-%version.tar.bz2
 License:	GPL
 Group:		Graphical desktop/KDE

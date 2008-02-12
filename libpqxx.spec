@@ -19,15 +19,15 @@ BuildRequires:  pkgconfig
 Obsoletes:	%mklibname pqxx 2
 
 %description
-This library works on top of the C-level API library, libpq. You will need libpq 
-in order to use libpqxx. 
-The first thing you're likely to notice in programming with libpqxx is that unlike 
-other libraries, it revolves entirely around transactions. Transactions are a 
-central concept in database management systems, but they are widely 
-underappreciated among application developers. Another well-known open source 
-database system, MySQL, never even got around to implementing them at all in their 
-own engine, relying on a third-party replacement engine (now owned by Oracle) to 
-provide this functionality instead.
+This library works on top of the C-level API library, libpq. You will need
+libpq in order to use libpqxx. 
+The first thing you're likely to notice in programming with libpqxx is that
+unlike other libraries, it revolves entirely around transactions. Transactions
+are a central concept in database management systems, but they are widely
+underappreciated among application developers. Another well-known open source
+database system, MySQL, never even got around to implementing them at all in
+their own engine, relying on a third-party replacement engine (now owned by
+Oracle) to provide this functionality instead.
 
 %prep
 %setup -q

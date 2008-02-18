@@ -3,7 +3,7 @@
 
 %define __libtoolize /bin/true
 
-Summary:	Libpqxx is the official C++ client API for PostgreSQL
+Summary:	The official C++ client API for PostgreSQL
 Name:		%{name}
 Version:	%{version}
 Release:	%mkrel 1

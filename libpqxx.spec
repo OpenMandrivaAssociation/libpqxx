@@ -9,6 +9,7 @@ License:	GPLv2+
 Group:		Development/Databases
 Url:		http://thaiopensource.org/development/libpqxx
 Patch2:         libpqxx-2.6.8-gcc43.patch
+Patch3:		libpqxx-2.6.9-tests-gcc43.patch
 BuildRequires:	postgresql-devel
 BuildRequires:  xmlto
 BuildRequires:  doxygen
@@ -41,6 +42,7 @@ applications which will use %{name}.
 
 %setup -q
 %patch2 -p1 -b .gcc43
+%patch3 -p1
 
 %build
 %configure2_5x \

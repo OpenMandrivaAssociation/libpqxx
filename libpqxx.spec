@@ -3,11 +3,11 @@
 Summary:	The official C++ client API for PostgreSQL
 Name:		libpqxx
 Version:	2.6.9
-Release:	%mkrel 5
+Release:	%mkrel 6
 Source:		http://pqxx.org/download/software/libpqxx/%name-%version.tar.gz
 License:	GPLv2+
 Group:		Development/Databases
-Url:		http://thaiopensource.org/development/libpqxx
+Url:		http://pqxx.org/
 Patch2:         libpqxx-2.6.8-gcc43.patch
 Patch3:		libpqxx-2.6.9-tests-gcc43.patch
 # (Anssi 05/2008) fixes undefined symbol freemem_result_data; from upstream:

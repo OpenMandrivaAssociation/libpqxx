@@ -1,14 +1,12 @@
-%define __libtoolize /bin/true
-
 Summary:	The official C++ client API for PostgreSQL
 Name:		libpqxx
-Version:	2.6.9
-Release:	%mkrel 7
+Version:	3.0.2
+Release:	%mkrel 1
 Source:		http://pqxx.org/download/software/libpqxx/%name-%version.tar.gz
 License:	GPLv2+
 Group:		Development/Databases
 Url:		http://pqxx.org/
-Patch2:         libpqxx-2.6.8-gcc43.patch
+Patch2:         libpqxx-3.0.2-gcc43.patch
 Patch3:		libpqxx-2.6.9-tests-gcc43.patch
 # (Anssi 05/2008) fixes undefined symbol freemem_result_data; from upstream:
 Patch4:		libpqxx-2.6.9-freemem_result_data.patch
@@ -41,18 +39,14 @@ This package contains the headers that programmers will need to develop
 applications which will use %{name}.
 
 %prep
-
 %setup -q
 %patch2 -p1 -b .gcc43
-%patch3 -p1
-%patch4 -p1
+#patch3 -p1
 
 %build
 %configure2_5x \
-    --disable-debug \
     --enable-shared \
-    --disable-static \
-    --disable-rpath 
+    --disable-static
 %make
 
 %install
@@ -73,7 +67,7 @@ rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
-%_libdir/libpqxx-%version.so
+%_libdir/libpqxx-3.0.so
 
 %files devel
 %defattr(-,root,root)

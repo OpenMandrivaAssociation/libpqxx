@@ -6,10 +6,6 @@ Source:		http://pqxx.org/download/software/libpqxx/%name-%version.tar.gz
 License:	GPLv2+
 Group:		Development/Databases
 Url:		http://pqxx.org/
-Patch2:         libpqxx-3.0.2-gcc43.patch
-Patch3:		libpqxx-2.6.9-tests-gcc43.patch
-# (Anssi 05/2008) fixes undefined symbol freemem_result_data; from upstream:
-Patch4:		libpqxx-2.6.9-freemem_result_data.patch
 BuildRequires:	postgresql-devel
 BuildRequires:  xmlto
 BuildRequires:  doxygen
@@ -40,8 +36,6 @@ applications which will use %{name}.
 
 %prep
 %setup -q
-#patch2 -p1 -b .gcc43
-#patch3 -p1
 
 %build
 %configure2_5x \

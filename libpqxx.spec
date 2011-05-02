@@ -3,6 +3,7 @@ Name:		libpqxx
 Version:	3.1
 Release:	%mkrel 3
 Source:		http://pqxx.org/download/software/libpqxx/%name-%version.tar.gz
+Patch0:		libpqxx-3.1-gcc46.patch
 License:	GPLv2+
 Group:		Development/Databases
 Url:		http://pqxx.org/
@@ -36,6 +37,7 @@ applications which will use %{name}.
 
 %prep
 %setup -q
+%patch0 -p0
 
 %build
 %configure2_5x \

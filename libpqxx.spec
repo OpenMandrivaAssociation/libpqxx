@@ -1,9 +1,8 @@
 Summary:	The official C++ client API for PostgreSQL
 Name:		libpqxx
-Version:	3.1
-Release:	%mkrel 3
+Version:	4.0
+Release:	1
 Source:		http://pqxx.org/download/software/libpqxx/%name-%version.tar.gz
-Patch0:		libpqxx-3.1-gcc46.patch
 License:	GPLv2+
 Group:		Development/Databases
 Url:		http://pqxx.org/
@@ -12,7 +11,6 @@ BuildRequires:  xmlto
 BuildRequires:  doxygen
 BuildRequires:  pkgconfig
 Obsoletes:	%mklibname pqxx 2
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 This library works on top of the C-level API library, libpq. You will need
@@ -37,7 +35,6 @@ applications which will use %{name}.
 
 %prep
 %setup -q
-%patch0 -p0
 
 %build
 %configure2_5x \
@@ -46,20 +43,8 @@ applications which will use %{name}.
 %make
 
 %install
-rm -rf %{buildroot}
 
 %makeinstall_std
-
-%clean
-rm -rf %{buildroot}
-
-%if %mdkversion < 200900
-%post -p /sbin/ldconfig
-%endif
-
-%if %mdkversion < 200900
-%postun -p /sbin/ldconfig
-%endif
 
 %files
 %defattr(-,root,root)

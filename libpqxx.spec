@@ -1,7 +1,7 @@
 Summary:	The official C++ client API for PostgreSQL
 Name:		libpqxx
 Version:	4.0
-Release:	1
+Release:	2
 Source:		http://pqxx.org/download/software/libpqxx/%name-%version.tar.gz
 License:	GPLv2+
 Group:		Development/Databases
@@ -46,14 +46,14 @@ applications which will use %{name}.
 
 %makeinstall_std
 
+# cleanup
+rm -f %{buildroot}%{_libdir}/*.la
+
 %files
-%defattr(-,root,root)
 %_libdir/libpqxx-*.so
 
 %files devel
-%defattr(-,root,root)
 %_bindir/pqxx-config
 %_includedir/pqxx/*
-%_libdir/libpqxx.la
 %_libdir/libpqxx.so
 %_libdir/pkgconfig/libpqxx.pc

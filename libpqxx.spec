@@ -1,10 +1,11 @@
-%define libname	%mklibname pqxx %{version}
+%define major %(echo %{version} |cut -d. -f1-2)
+%define libname	%mklibname pqxx %{major}
 %define devname	%mklibname pqxx -d
 
 Summary:	The official C++ client API for PostgreSQL
 Name:		libpqxx
-Version:	4.0
-Release:	8
+Version:	4.0.1
+Release:	1
 License:	GPLv2+
 Group:		Development/Databases
 Url:		http://pqxx.org/
@@ -56,7 +57,7 @@ applications which will use %{name}.
 %makeinstall_std
 
 %files -n %{libname}
-%{_libdir}/libpqxx-%{version}.so
+%{_libdir}/libpqxx-%{major}.so
 
 %files -n %{devname}
 %{_bindir}/pqxx-config

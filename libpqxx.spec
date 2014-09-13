@@ -46,9 +46,12 @@ applications which will use %{name}.
 
 %prep
 %setup -q
+# fix spurious permissions
+chmod -x COPYING
 
 %build
-%configure2_5x \
+sed -i 's/python/python2/g' tools/splitconfig
+%configure \
 	--enable-shared \
 	--disable-static
 %make
@@ -64,4 +67,3 @@ applications which will use %{name}.
 %{_includedir}/pqxx/*
 %{_libdir}/libpqxx.so
 %{_libdir}/pkgconfig/libpqxx.pc
-

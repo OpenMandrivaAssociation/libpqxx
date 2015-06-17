@@ -5,7 +5,7 @@
 Summary:	The official C++ client API for PostgreSQL
 Name:		libpqxx
 Version:	4.0.1
-Release:	6
+Release:	7
 License:	GPLv2+
 Group:		Development/Databases
 Url:		http://pqxx.org/
@@ -14,6 +14,7 @@ Source100:	libpqxx.rpmlintrc
 BuildRequires:  doxygen
 BuildRequires:  xmlto
 BuildRequires:	postgresql-devel
+BuildRequires:	pkgconfig(python2)
 
 %description
 This library works on top of the C-level API library, libpq. You will need

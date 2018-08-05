@@ -1,0 +1,28 @@
+diff -up libpqxx-4.0.1/configure.ac.omv~ libpqxx-4.0.1/configure.ac
+diff -up libpqxx-4.0.1/tools/template2mak.py.omv~ libpqxx-4.0.1/tools/template2mak.py
+--- libpqxx-4.0.1/tools/template2mak.py.omv~	2018-08-05 21:34:29.665091648 +0200
++++ libpqxx-4.0.1/tools/template2mak.py	2018-08-05 21:34:45.900172158 +0200
+@@ -79,8 +79,8 @@ def template2mak(infile,outfile):
+ 
+ if __name__ == '__main__':
+     if len(sys.argv) > 3:
+-        print "Too many arguments."
+-	sys.exit(1)
++        print("Too many arguments.")
++    sys.exit(1)
+ 
+     me = os.path.basename(sys.argv[0])
+     hr = "#"*80 + "\n"
+@@ -93,9 +93,9 @@ if __name__ == '__main__':
+     if len(sys.argv) >= 2:
+         inarg = os.path.abspath(sys.argv[1])
+         input = file(inarg)
+-	if len(sys.argv) >= 3:
+-	    outarg = sys.argv[2]
+-	    output = file(outarg, 'w')
++    if len(sys.argv) >= 3:
++        outarg = sys.argv[2]
++        output = file(outarg, 'w')
+         #os.chdir(os.path.dirname(inarg))
+ 
+     output.write(hr)

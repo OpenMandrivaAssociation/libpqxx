@@ -5,12 +5,14 @@
 Summary:	The official C++ client API for PostgreSQL
 Name:		libpqxx
 Version:	4.0.1
-Release:	10
+Release:	11
 License:	GPLv2+
 Group:		Development/Databases
 Url:		http://pqxx.org/
 Source0:	http://pqxx.org/download/software/libpqxx/%{name}-%{version}.tar.gz
 Source100:	libpqxx.rpmlintrc
+Patch0:		libpqxx-4.0.1-python3.patch
+Patch1:		libpqxx-4.0.1-fix-configure.patch
 BuildRequires:  doxygen
 BuildRequires:  xmlto
 BuildRequires:	postgresql-devel
@@ -46,12 +48,12 @@ This package contains the headers that programmers will need to develop
 applications which will use %{name}.
 
 %prep
-%setup -q
+%autosetup -p1
 # fix spurious permissions
 chmod -x COPYING
+sed -i 's/python/python2/g' tools/splitconfig
 
 %build
-sed -i 's/python/python2/g' tools/splitconfig
 %configure \
 	--enable-shared \
 	--disable-static

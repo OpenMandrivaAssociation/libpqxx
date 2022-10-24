@@ -1,18 +1,16 @@
 %define major %(echo %{version} |cut -d. -f1-2)
-%define libname	%mklibname pqxx %{major}
+%define libname	%mklibname pqxx
 %define devname	%mklibname pqxx -d
 
 Summary:	The official C++ client API for PostgreSQL
 Name:		libpqxx
-Version:	4.0.1
-Release:	12
+Version:	7.7.4
+Release:	1
 License:	GPLv2+
 Group:		Development/Databases
 Url:		http://pqxx.org/
-Source0:	http://pqxx.org/download/software/libpqxx/%{name}-%{version}.tar.gz
+Source0:	https://github.com/jtv/libpqxx/archive/refs/tags/%{version}.tar.gz
 Source100:	libpqxx.rpmlintrc
-Patch0:		libpqxx-4.0.1-python3.patch
-Patch1:		libpqxx-4.0.1-fix-configure.patch
 BuildRequires:  doxygen
 BuildRequires:  xmlto
 BuildRequires:	postgresql-devel
@@ -51,22 +49,20 @@ applications which will use %{name}.
 %autosetup -p1
 # fix spurious permissions
 chmod -x COPYING
-sed -i 's/python/python2/g' tools/splitconfig
+
+export CXXFLAGS="%{optflags} -std=gnu++20"
+%configure --enable-shared --disable-static
 
 %build
-%configure \
-	--enable-shared \
-	--disable-static
-%make
+%make_build
 
 %install
-%makeinstall_std
+%make_install
 
 %files -n %{libname}
 %{_libdir}/libpqxx-%{major}.so
 
 %files -n %{devname}
-%{_bindir}/pqxx-config
 %{_includedir}/pqxx/*
 %{_libdir}/libpqxx.so
 %{_libdir}/pkgconfig/libpqxx.pc

@@ -8,7 +8,7 @@ Version:	7.9.2
 Release:	1
 License:	GPLv2+
 Group:		Development/Databases
-Url:		http://pqxx.org/
+Url:		https://pqxx.org/
 Source0:	https://github.com/jtv/libpqxx/archive/refs/tags/%{version}.tar.gz
 Source100:	libpqxx.rpmlintrc
 BuildRequires:  doxygen

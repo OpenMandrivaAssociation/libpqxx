@@ -11,6 +11,11 @@ Group:		Development/Databases
 Url:		https://pqxx.org/
 Source0:	https://github.com/jtv/libpqxx/archive/refs/tags/%{version}.tar.gz
 Source100:	libpqxx.rpmlintrc
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:  doxygen
 BuildRequires:  xmlto
 BuildRequires:	postgresql-devel

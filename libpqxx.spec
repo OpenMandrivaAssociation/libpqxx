@@ -4,7 +4,7 @@
 
 Summary:	The official C++ client API for PostgreSQL
 Name:		libpqxx
-Version:	7.10.4
+Version:	8.0.2
 Release:	1
 License:	GPLv2+
 Group:		Development/Databases
